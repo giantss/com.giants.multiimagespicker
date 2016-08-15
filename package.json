@@ -1,0 +1,29 @@
+{
+  "name": "cordova-plugin-wechat",
+  "version": "1.0.0",
+  "description": "A cordova plugin, a JS version of Wechat SDK",
+  "cordova": {
+    "id": "chinabike-plugins-MultiImagesPicker",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gokeiyou/chinabike-plugins-MultiImagesPicker.git"
+  },
+  "keywords": [
+    "cordova",
+    "imagePicker",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "Jimmy.Wu <wjy@kaka.cn>",
+  "license": "MIT",
+  "homepage": "https://github.com/gokeiyou/chinabike-plugins-MultiImagesPicker#readme"
+}

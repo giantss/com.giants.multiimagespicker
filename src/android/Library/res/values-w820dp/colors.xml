@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <drawable name="title_bg">#ffffffff</drawable>
+    <drawable name="title_text_color">#ff363636</drawable>
+    <drawable name="full_transparent">#00000000</drawable>
+    <drawable name="container_bg">#ffeeeeee</drawable>
+    <drawable name="trans">#00000000</drawable>
+    <drawable name="black">#000000</drawable>
+    <drawable name="alertdialog_line">#c6c6c6</drawable>
+    <drawable name="actionsheet_blue">#037BFF</drawable>
+    <drawable name="actionsheet_red">#FD4A2E</drawable>
+    <drawable name="actionsheet_gray">#8F8F8F</drawable>
+    <drawable name="common_title_bg">#aa111213</drawable>
+    <drawable name="primary_title_text_color">#ffeeeeee</drawable>
+    <drawable name="album_item_bg">#fffcfcfd</drawable>
+
+    <!-- 登陆界面 -->
+    <drawable name="login_login_button_enable_color">#fffded</drawable>
+    <drawable name="login_login_button_disable_color">#bdbdbd</drawable>
+    <drawable name="login_register_text_color">#3799df</drawable>
+    <drawable name="login_input_container_bg">#ffffffff</drawable>
+    <drawable name="login_forget_password_text_color">#646464</drawable>
+    <drawable name="login_quick_login_text_color">#8f8f8f</drawable>
+    <drawable name="login_input_dividing_line_bg">#cbcbcb</drawable>
+
+    <!-- 注册界面 -->
+    <drawable name="register_agreement_color">#4da0e4</drawable>
+    <drawable name="register_phone_button_enable_color">#ffffff</drawable>
+    <drawable name="register_phone_button_disable_color">#e3f1fa</drawable>
+
+    <!-- 协议dialog -->
+    <drawable name="dialog_title_bg">#00adef</drawable>
+    <drawable name="dialog_container_bg">#ffffff</drawable>
+
+    <!-- 主界面导航 -->
+    <drawable name="navigation_bg">#f8f8f8</drawable>
+    <drawable name="navigation_text_normal_color">#2c2c2c</drawable>
+    <drawable name="navigation_text_selected_color">#1cb6f4</drawable>
+
+    <!-- "我的"界面 -->
+    <drawable name="mine_bg">#ffffff</drawable>
+    <drawable name="mine_bg_selected">#d9d9d9</drawable>
+    <drawable name="mine_dividing_line_color">#cacaca</drawable>
+    <drawable name="mine_text_color_normal">#333333</drawable>
+    <drawable name="mine_text_color_selected">#999999</drawable>
+    <drawable name="mine_message_container_bg">#f6f7fb</drawable>
+    <drawable name="mine_text_text_color">#9c9f9d</drawable>
+    <drawable name="mine_add_text_color">#6fbce6</drawable>
+    <drawable name="mine_user_name_color">#e7e8ea</drawable>
+    <drawable name="mine_invite_enable">#656565</drawable>
+    <drawable name="mine_invite_disable">#e7e7e7</drawable>
+    <drawable name="want_go_item_text_color1">#313131</drawable>
+    <drawable name="want_go_item_text_color2">#707070</drawable>
+    <drawable name="want_go_item_text_red_color">#f54c61</drawable>
+
+    <!-- 个人信息 -->
+    <drawable name="userinfo_title_color">#333333</drawable>
+    <drawable name="userinfo_value_color">#999999</drawable>
+
+    <!-- 我的活动 -->
+    <drawable name="all_activities_tab_normal_color">#333333</drawable>
+    <drawable name="all_activities_tab_selected_color">#3e9de0</drawable>
+
+    <!-- 爱好界面 -->
+    <drawable name="interest_bg">#f6f7fb</drawable>
+    <!-- 消息界面 -->
+    <drawable name="message_text_color">#999999</drawable>
+    <drawable name="message_content_color">#333333</drawable>
+
+    <!-- 活动详情 -->
+    <drawable name="blue_bg">#20b2ee</drawable>
+    <drawable name="blue_bg_selected">#0392cd</drawable>
+    <drawable name="blue_bg_unable">#dedede</drawable>
+
+     <!--  songyao  --> 
+    <drawable name="message_new_background">#eeeeee</drawable> 
+    <drawable name="message_new_name_textcolor">#333333</drawable> 
+    <drawable name="message_new_value_textcolor">#536893</drawable> 
+    
+    <drawable name="footer_line">#cccccc</drawable>
+    <drawable name="footer_text">#666666</drawable>
+
+    <drawable name="userinfo_signture_background">#eeeeee</drawable>
+
+    <!-- 用户信息-->
+    <drawable name="personal_page_item_background">#ffffff</drawable>
+    <drawable name="personal_page_background">#eeeeee</drawable>
+    <drawable name="personal_page_systemdynamic_background">#eeeeee</drawable>
+    <drawable name="personal_page_dynamic_textcolor_gray">#b0b0b0</drawable>
+    <drawable name="personal_page_leadactivity_textcolor">#333333</drawable>
+    <drawable name="personal_page_signture_null_textcolor">#f1f1f1</drawable>
+</resources>

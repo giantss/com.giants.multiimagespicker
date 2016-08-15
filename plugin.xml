@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="chinabike-plugins-MultiImagesPicker"
+    version="1.0.0">
+
+    <name>MultiImagesPicker</name>
+
+    <description>
+        相册目录列表，支持多图选择
+    </description>
+
+    <license>MIT</license>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+
+    <js-module src="www/picker.js" name="MultiImagesPicker">
+        <clobbers target="MultiImagesPicker"/>
+    </js-module>
+
+    <!-- Android -->
+    <platform name="android">
+        <!-- config.xml文件配置项添加 -->
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="MultiImagesPicker">
+                <param name="android-package" value="com.chinabike.plugins.MultiImagesPicker"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity
+                android:name="com.chinabike.plugins.mip.activity.LocalAlbum"
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:screenOrientation="portrait" />
+            <activity android:name="com.chinabike.plugins.mip.activity.LocalAlbumDetail" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+
+        <source-file src="src/android/com/chinabike/plugins/MultiImagesPicker.java" target-dir="src/com/chinabike/plugins"/>
+        <source-file src="src/android/com/chinabike/plugins/FakeR.java" target-dir="src/com/chinabike/plugins"/>
+        <source-file src="src/android/Library/src/mip/AppContext.java" target-dir="src/com/chinabike/plugins/mip"/>
+        <source-file src="src/android/Library/src/mip/AppManager.java" target-dir="src/com/chinabike/plugins/mip"/>
+        <source-file src="src/android/Library/src/mip/common/ExtraKey.java" target-dir="src/com/chinabike/plugins/mip/common"/>
+        <source-file src="src/android/Library/src/mip/common/ImageUtils.java" target-dir="src/com/chinabike/plugins/mip/common"/>
+        <source-file src="src/android/Library/src/mip/common/LocalImageHelper.java" target-dir="src/com/chinabike/plugins/mip/common"/>
+        <source-file src="src/android/Library/src/mip/common/MethodsCompat.java" target-dir="src/com/chinabike/plugins/mip/common"/>
+        <source-file src="src/android/Library/src/mip/common/StringUtils.java" target-dir="src/com/chinabike/plugins/mip/common"/>
+        <source-file src="src/android/Library/src/mip/widget/AlbumViewPager.java" target-dir="src/com/chinabike/plugins/mip/widget"/>
+        <source-file src="src/android/Library/src/mip/widget/FilterImageView.java" target-dir="src/com/chinabike/plugins/mip/widget"/>
+        <source-file src="src/android/Library/src/mip/widget/MatrixImageView.java" target-dir="src/com/chinabike/plugins/mip/widget"/>
+        <source-file src="src/android/Library/src/mip/activity/BaseActivity.java" target-dir="src/com/chinabike/plugins/mip/activity"/>
+        <source-file src="src/android/Library/src/mip/activity/LocalAlbum.java" target-dir="src/com/chinabike/plugins/mip/activity"/>
+        <source-file src="src/android/Library/src/mip/activity/LocalAlbumDetail.java" target-dir="src/com/chinabike/plugins/mip/activity"/>
+
+        <source-file src="src/android/Library/res/anim/rotate_loading.xml" target-dir="res/anim"/>
+        <source-file src="src/android/Library/res/drawable/picture_setting_album_checkbox.xml" target-dir="res/drawable"/>
+        <source-file src="src/android/Library/res/drawable/white_gray_bg_selector.xml" target-dir="res/drawable"/>
+        <source-file src="src/android/Library/res/drawable-xhdpi/album_finish.9.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/Library/res/drawable-xhdpi/albumset_preselected.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/Library/res/drawable-xhdpi/albumset_selected.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/Library/res/drawable-xhdpi/back.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/Library/res/drawable-xhdpi/btn_posts_camera_l.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/Library/res/drawable-xhdpi/icon_back2.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/Library/res/drawable-xhdpi/icon_go.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/Library/res/drawable-xhdpi/post_pager_delete.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/Library/res/drawable-xhdpi/progress_icon.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/Library/res/drawable-xhdpi/cb_no_pic_small.png" target-dir="res/drawable-xhdpi"/>
+
+        <source-file src="src/android/Library/res/layout/album_item_header_bar.xml" target-dir="res/layout"/>
+        <source-file src="src/android/Library/res/layout/item.xml" target-dir="res/layout"/>
+        <source-file src="src/android/Library/res/layout/item_album_pager.xml" target-dir="res/layout"/>
+        <source-file src="src/android/Library/res/layout/item_albumfoler.xml" target-dir="res/layout"/>
+        <source-file src="src/android/Library/res/layout/local_album.xml" target-dir="res/layout"/>
+        <source-file src="src/android/Library/res/layout/local_album_detail.xml" target-dir="res/layout"/>
+        <source-file src="src/android/Library/res/layout/simple_list_item.xml" target-dir="res/layout"/>
+
+        <source-file src="src/android/Library/res/values/dimens.xml" target-dir="res/values"/>
+        <!-- <source-file src="src/android/Library/res/values/strings.xml" target-dir="res/values"/> -->
+
+        <config-file target="res/values/strings.xml" parent="/*">
+            <!-- <string name="app_name">多图选择</string> -->
+            <string name="launcher_name">@string/app_name</string>
+            <string name="activity_name">@string/launcher_name</string>
+
+            <string name="hello_world">Hello world!</string>
+            <string name="action_settings">Settings</string>
+
+            <string name="select_album">选择相册</string>
+            <string name="album_loading">相册初始化中...</string>
+        </config-file>
+
+        <source-file src="src/android/Library/res/values-w820dp/colors.xml" target-dir="res/values-w820dp"/>
+        <source-file src="src/android/Library/res/values-w820dp/dimens.xml" target-dir="res/values-w820dp"/>
+        <source-file src="src/android/Library/res/values-w820dp/standard_color.xml" target-dir="res/values-w820dp"/>
+        <source-file src="src/android/Library/res/values-w820dp/standard_dimens.xml" target-dir="res/values-w820dp"/>
+        <source-file src="src/android/Library/res/values-w820dp/styles.xml" target-dir="res/values-w820dp"/>
+
+        <!--<source-file src="libs/android-support-v4.jar" target-dir="libs" />-->
+        <source-file src="libs/appcompat-v7-22.2.0-sources.jar" target-dir="libs" />
+        <source-file src="libs/support-annotations-22.2.0-sources.jar" target-dir="libs" />
+        <source-file src="libs/uil.jar" target-dir="libs" />
+		
+		<framework src="com.android.support:support-v4:+" value="gradle" />
+    </platform>
+
+</plugin>
