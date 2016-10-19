@@ -71,15 +71,7 @@ public class AppContext extends Application {
         init();
     }
 	
-	    /**
-     * http://blog.csdn.net/yanzhenjie1003/article/details/51818269 android-support-multidex解决65536
-     * @param base
-     */
-    @Override
-    protected void attachBaseContext(Context base) {
-        super.attachBaseContext(base);
-        MultiDex.install(this);
-    }
+
 
     public static AppContext getInstance() {
         return appContext;
