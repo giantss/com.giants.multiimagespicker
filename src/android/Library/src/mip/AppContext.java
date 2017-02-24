@@ -1,21 +1,15 @@
 package com.chinabike.plugins.mip;
 
-import android.Manifest;
 import android.app.Application;
 import android.content.Context;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.view.Display;
 import android.view.WindowManager;
 
-import com.chinabike.plugins.mip.common.LocalImageHelper;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
-
-import org.apache.cordova.PermissionHelper;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -70,7 +64,7 @@ public class AppContext extends Application {
         appContext = this;
         init();
     }
-	
+
 
 
     public static AppContext getInstance() {
@@ -89,14 +83,13 @@ public class AppContext extends Application {
         }
     }
 
+
     public void reloadImages() {
         initImageLoader(getApplicationContext());
         //本地图片辅助类初始化
 
         //LocalImageHelper.init(this);
     }
-
-
 
 
     public static void initImageLoader(Context context) {

@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,7 +52,6 @@ public class LocalAlbum extends BaseActivity {
     ImageView progress;
     //    View camera;
     List<String> folderNames;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,11 +130,17 @@ public class LocalAlbum extends BaseActivity {
                 Toast.makeText(LocalAlbum.this, String.format("最多选择%d张图片", 9), Toast.LENGTH_SHORT).show();
                 return;
             }
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             //  拍照后保存图片的绝对路径
             String cameraPath = LocalImageHelper.getInstance().setCameraImgPath();
             File file = new File(cameraPath);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
+            //添加
+            Uri contentUri  = FileProvider.getUriForFile(getApplicationContext(),
+                    "com.bike.main.provider", file);
+
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+           // intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, contentUri);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION); //这一步很重要。给目标应用一个临时的授权。
             startActivityForResult(intent,
                     ImageUtils.REQUEST_CODE_GETIMAGE_BYCAMERA);
         }

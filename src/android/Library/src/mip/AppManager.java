@@ -67,8 +67,9 @@ public class AppManager {
 	 */
 	public void finishActivity(Class<?> cls){
 		for (Activity activity : activityStack) {
-			if(activity.getClass().equals(cls) ){
+			if(activity.getClass().getName().equals(cls.getName()) ){
 				finishActivity(activity);
+				break;
 			}
 		}
 	}

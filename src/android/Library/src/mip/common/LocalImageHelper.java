@@ -34,7 +34,7 @@ public class LocalImageHelper {
     //当前选中得图片个数
     private int currentSize;
 
-    public String getCameraImgPath() {
+    public  String getCameraImgPath() {
         return CameraImgPath;
     }
 
@@ -126,7 +126,9 @@ public class LocalImageHelper {
             return;
         //获取大图的游标
         Cursor cursor = context.getContentResolver().query(
-                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,  // 大图URI
+
+
+                MediaStore.Images.Media.getContentUri("external"),  // 大图URI
                 STORE_IMAGES,   // 字段
                 null,         // No where clause
                 null,         // No where clause
@@ -142,7 +144,7 @@ public class LocalImageHelper {
                 //小图URI
                 String thumbUri = getThumbnail(id, path);
                 //获取大图URI
-                String uri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI.buildUpon().
+                String uri = MediaStore.Images.Media.getContentUri("external").buildUpon().
                         appendPath(Integer.toString(id)).build().toString();
                 if (StringUtils.isEmpty(uri))
                     continue;
@@ -152,6 +154,8 @@ public class LocalImageHelper {
                 String folder = file.getParentFile().getName();
 
                 LocalFile localFile = new LocalFile();
+
+
                 localFile.setOriginalUri(uri);
                 localFile.setThumbnailUri(thumbUri);
                 int degree = cursor.getInt(2);
@@ -178,7 +182,7 @@ public class LocalImageHelper {
 
     private String getThumbnail(int id, String path) {
         //获取大图的缩略图
-        Cursor cursor = context.getContentResolver().query(MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI,
+        Cursor cursor = context.getContentResolver().query(MediaStore.Images.Thumbnails.getContentUri("external"),
                 THUMBNAIL_STORE_IMAGE,
                 MediaStore.Images.Thumbnails.IMAGE_ID + " = ?",
                 new String[]{id + ""},
@@ -186,7 +190,7 @@ public class LocalImageHelper {
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
             int thumId = cursor.getInt(0);
-            String uri = MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI.buildUpon().
+            String uri = MediaStore.Images.Thumbnails.getContentUri("external").buildUpon().
                     appendPath(Integer.toString(thumId)).build().toString();
             cursor.close();
             return uri;
@@ -256,5 +260,8 @@ public class LocalImageHelper {
             orientation = exifOrientation;
         }
 
+        public void setPath(String path) {
+
+        }
     }
 }

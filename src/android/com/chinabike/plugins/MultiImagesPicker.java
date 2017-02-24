@@ -14,10 +14,8 @@ import android.util.Log;
 
 import com.chinabike.plugins.mip.AppContext;
 import com.chinabike.plugins.mip.activity.LocalAlbum;
-import com.chinabike.plugins.mip.common.LocalImageHelper;
 
 import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PermissionHelper;
@@ -75,11 +73,14 @@ public class MultiImagesPicker extends CordovaPlugin {
                 quality = this.params.getInt("quality");
             }
 
+
             if(!PermissionHelper.hasPermission(this, permissions[0])) {
                 PermissionHelper.requestPermissions(this, PICK_ALBUM_SEC, permissions);
             } else {
                 this.getPictures(maximumImagesCount, desiredWidth,desiredHeight,quality);
             }
+
+
 
             return true;
         }
@@ -88,6 +89,8 @@ public class MultiImagesPicker extends CordovaPlugin {
     }
 
     public void getPictures(int maximumImagesCount, int desiredWidth, int desiredHeight, int quality) {
+
+
         Intent intent = new Intent(cordova.getActivity(), LocalAlbum.class);
 
         intent.putExtra("MAX_IMAGES", maximumImagesCount);
